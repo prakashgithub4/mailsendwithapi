@@ -70,3 +70,17 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## mailEncryption issue
+
+<p> In case of sending mail encryption is a very importent concept it first check that if http conction is secure then it permit to send email but if it found that connection is not secure the it prevent access gmail account. But for testing purpose there is a way to check mail is to be successfully send from local host for this reason we need to disable ssl property.</p>
+  <strong>  'stream' => [
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true,
+        ],
+    ],
+    </strong>
+    <p> This will add in mail.php page after username and password variable. </p>
